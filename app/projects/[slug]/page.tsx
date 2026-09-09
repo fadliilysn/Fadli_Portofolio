@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -9,21 +8,36 @@ import {
   Layers,
   ScatterChart,
   Star,
-  Sparkles,
+  Calendar,
+  Tag,
+  Zap,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { projects, getProjectBySlug, Project, normalizeImagePath } from "@/data/projects";
+import ImageGallery from "@/components/ImageGallery";
+import {
+  projects,
+  getProjectBySlug,
+  Project,
+} from "@/data/projects";
 
-const categoryMeta: Record<Project["category"], { Icon: typeof Layers; pattern: string }> = {
+const categoryMeta: Record<
+  Project["category"],
+  { Icon: typeof Layers; pattern: string; label: string; color: string }
+> = {
   web: {
     Icon: Layers,
     pattern:
       "repeating-linear-gradient(45deg, rgb(var(--accent) / 0.08) 0, rgb(var(--accent) / 0.08) 1px, transparent 1px, transparent 12px)",
+    label: "Web Application",
+    color: "text-blue-500 bg-blue-500/10 border-blue-500/25",
   },
   "data-ml": {
     Icon: ScatterChart,
-    pattern: "radial-gradient(rgb(var(--accent) / 0.22) 1.5px, transparent 1.5px)",
+    pattern:
+      "radial-gradient(rgb(var(--accent) / 0.22) 1.5px, transparent 1.5px)",
+    label: "Data & Machine Learning",
+    color: "text-violet-500 bg-violet-500/10 border-violet-500/25",
   },
 };
 
@@ -40,19 +54,35 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
+export default function ProjectDetail({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const project = getProjectBySlug(params.slug);
   if (!project) notFound();
 
   const currentIndex = projects.findIndex((p) => p.slug === params.slug);
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
-  const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
+  const nextProject =
+    currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
+
+  const catMeta = categoryMeta[project.category];
+
+  // Build gallery: extra images + main image (avoid duplicates)
+  const galleryImages: string[] = [
+    ...(project.images ?? []),
+    ...(project.image && !(project.images ?? []).includes(project.image)
+      ? [project.image]
+      : []),
+  ].filter(Boolean);
 
   return (
     <>
       <Navbar />
       <main className="mx-auto max-w-content px-6 py-12 sm:py-16">
-        {/* Back Link */}
+
+        {/* ── Back Link ── */}
         <Link
           href="/#projects"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-ink"
@@ -61,70 +91,110 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
           Kembali ke semua project
         </Link>
 
-        {/* Project Image Banner */}
-        {(() => {
-          const imageSrc = normalizeImagePath(project.image);
-          return (
-            <div className="relative mt-6 aspect-[16/8] w-full overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
-              {imageSrc ? (
-                <Image
-                  src={imageSrc}
-                  alt={`Tangkapan layar ${project.title}`}
-                  fill
-                  priority
-                  className="object-cover"
-                />
-              ) : (
-                <div
-                  className="flex h-full w-full items-center justify-center"
-                  style={{
-                    backgroundImage: categoryMeta[project.category].pattern,
-                    backgroundSize: project.category === "data-ml" ? "18px 18px" : "auto",
-                  }}
-                >
-                  {(() => {
-                    const Icon = categoryMeta[project.category].Icon;
-                    return <Icon size={44} strokeWidth={1.5} className="text-accent/60" />;
-                  })()}
-                </div>
-              )}
-            </div>
-          );
-        })()}
+        {/* ── Content Grid ── */}
+        <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_272px]">
 
-        {/* Main Details & Sidebar */}
-        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_300px]">
+          {/* ── Left: Main Content ── */}
           <div>
-            {/* Badges */}
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted">
-                {project.category === "web" ? "Web Application" : "Data & Machine Learning"}
-              </span>
-              {project.featured && (
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-500">
-                  <Star size={12} className="fill-amber-500" />
-                  Proyek Unggulan
-                </span>
-              )}
-            </div>
-
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+            {/* Title & meta */}
+            <p className="text-sm font-semibold text-accent">{project.role}</p>
+            <h1 className="mt-1 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
               {project.title}
             </h1>
-            <p className="mt-2 text-sm font-semibold text-accent">{project.role}</p>
+            <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted">
+              {project.year && (
+                <span className="flex items-center gap-1">
+                  <Calendar size={13} />
+                  {project.year}
+                </span>
+              )}
+              <span className="flex items-center gap-1">
+                <Tag size={13} />
+                {catMeta.label}
+              </span>
+            </div>
 
-            <div className="mt-6 space-y-4 text-[15.5px] leading-relaxed text-muted">
+            {/* Description */}
+            <div className="mt-5 rounded-xl border border-border bg-surface p-5 text-[15px] leading-relaxed text-muted">
               <p>{project.description}</p>
             </div>
+
+            {/* Gallery (client component) */}
+            {galleryImages.length > 0 && (
+              <ImageGallery images={galleryImages} title={project.title} />
+            )}
+
+            {/* Features */}
+            {project.features && project.features.length > 0 && (
+              <div className="mt-8">
+                <h2 className="mb-4 flex items-center gap-2 text-base font-semibold text-ink">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-accent/10 text-accent">
+                    <Zap size={13} />
+                  </span>
+                  Fitur Utama
+                </h2>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {project.features.map((feat, i) => (
+                    <div
+                      key={i}
+                      className="rounded-xl border border-border bg-card p-4 transition-all hover:border-accent/40 hover:shadow-sm"
+                    >
+                      {feat.icon && (
+                        <span className="mb-2 block text-2xl leading-none">
+                          {feat.icon}
+                        </span>
+                      )}
+                      <p className="text-sm font-semibold text-ink">
+                        {feat.title}
+                      </p>
+                      <p className="mt-1 text-xs leading-relaxed text-muted">
+                        {feat.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
-          {/* Right Sidebar: Tech Stack & Actions */}
-          <aside className="h-fit space-y-6 rounded-2xl border border-border bg-card p-6 shadow-sm">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted">
-                Teknologi Digunakan
+          {/* ── Right Sidebar ── */}
+          <aside className="h-fit space-y-4">
+
+            {/* Action Buttons */}
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
+                Tautan
               </p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
+              <div className="space-y-2.5">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface"
+                >
+                  <Github size={16} />
+                  Lihat Kode di GitHub
+                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-accent py-2.5 text-sm font-semibold text-accent-ink shadow-md shadow-accent/20 transition-all hover:shadow-lg hover:shadow-accent/25"
+                  >
+                    <ExternalLink size={16} />
+                    Buka Live Demo
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* Tech Stack */}
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
+                Teknologi
+              </p>
+              <div className="flex flex-wrap gap-1.5">
                 {project.tech.map((t) => (
                   <span
                     key={t}
@@ -136,35 +206,56 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
               </div>
             </div>
 
-            <div className="space-y-2.5 border-t border-border pt-5">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface"
-              >
-                <Github size={16} />
-                Lihat Kode di GitHub
-              </a>
-
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-accent py-2.5 text-sm font-semibold text-accent-ink shadow-md shadow-accent/20 transition-all hover:shadow-lg hover:shadow-accent/25"
-                >
-                  <ExternalLink size={16} />
-                  Buka Live Demo
-                </a>
-              )}
+            {/* Info Card */}
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
+                Info Proyek
+              </p>
+              <div className="space-y-2.5 text-sm">
+                {project.year && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted">Tahun</span>
+                    <span className="font-semibold text-ink">{project.year}</span>
+                  </div>
+                )}
+                <div className="flex items-center justify-between">
+                  <span className="text-muted">Kategori</span>
+                  <span className="font-semibold text-ink">
+                    {project.category === "web" ? "Web App" : "Data / ML"}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-muted">Status</span>
+                  <span
+                    className={`flex items-center gap-1.5 font-semibold ${
+                      project.demo ? "text-emerald-500" : "text-muted"
+                    }`}
+                  >
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${
+                        project.demo ? "bg-emerald-500" : "bg-muted"
+                      }`}
+                    />
+                    {project.demo ? "Live" : "Closed"}
+                  </span>
+                </div>
+                {project.featured && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted">Label</span>
+                    <span className="flex items-center gap-1 font-semibold text-amber-500">
+                      <Star size={11} className="fill-amber-500" />
+                      Unggulan
+                    </span>
+                  </div>
+                )}
+              </div>
             </div>
           </aside>
         </div>
 
-        {/* Project Pagination (Previous & Next Project Navigation) */}
+        {/* ── Prev / Next Navigation ── */}
         <div className="mt-16 border-t border-border pt-8">
-          <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4">
+          <div className="flex flex-col items-stretch justify-between gap-4 sm:flex-row">
             {prevProject ? (
               <Link
                 href={`/projects/${prevProject.slug}`}
@@ -173,7 +264,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                 <div className="flex items-center gap-1.5 text-xs text-muted">
                   <ArrowLeft
                     size={13}
-                    className="transition-transform group-hover:-translate-x-1 text-accent"
+                    className="text-accent transition-transform group-hover:-translate-x-1"
                   />
                   <span>Project Sebelumnya</span>
                 </div>
@@ -182,7 +273,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                 </p>
               </Link>
             ) : (
-              <div className="hidden sm:block flex-1" />
+              <div className="hidden flex-1 sm:block" />
             )}
 
             {nextProject ? (
@@ -194,7 +285,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                   <span>Project Selanjutnya</span>
                   <ArrowRight
                     size={13}
-                    className="transition-transform group-hover:translate-x-1 text-accent"
+                    className="text-accent transition-transform group-hover:translate-x-1"
                   />
                 </div>
                 <p className="mt-1.5 font-semibold text-ink transition-colors group-hover:text-accent">
@@ -202,7 +293,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                 </p>
               </Link>
             ) : (
-              <div className="hidden sm:block flex-1" />
+              <div className="hidden flex-1 sm:block" />
             )}
           </div>
         </div>

@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Moon, Sun, Github, Linkedin, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/lib/theme-provider";
 
 const links = [
-  { href: "#about", label: "Tentang" },
-  { href: "#experience", label: "Experience" },
-  { href: "#certifications", label: "Sertifikasi" },
-  { href: "#projects", label: "Project" },
-  { href: "#contact", label: "Kontak" },
+  { href: "/#about", label: "Tentang" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#certifications", label: "Sertifikasi" },
+  { href: "/#projects", label: "Project" },
+  { href: "/#contact", label: "Kontak" },
 ];
 
 export default function Navbar() {
@@ -23,24 +24,24 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur-md">
       <nav className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
-        <a
-          href="#top"
+        <Link
+          href="/"
           className="text-[15px] font-semibold tracking-tight transition-colors hover:text-accent"
           onClick={closeMenu}
         >
           Muhamad Fadli Ilyaasin
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <div className="hidden items-center gap-6 sm:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-muted transition-colors hover:text-ink"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -96,14 +97,14 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-3">
               {links.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={closeMenu}
                   className="rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface hover:text-ink"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
 
               <div className="mt-2 flex items-center gap-3 border-t border-border pt-4">

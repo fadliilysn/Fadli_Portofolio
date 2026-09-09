@@ -1,5 +1,11 @@
 export type ProjectCategory = "web" | "data-ml";
 
+export interface ProjectFeature {
+  icon?: string;
+  title: string;
+  description: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -10,7 +16,10 @@ export interface Project {
   tech: string[];
   github: string;
   demo?: string;
-  image?: string; // taruh file di /public/images, contoh: "/images/promosiin.png"
+  image?: string;   // taruh file di /public/images, contoh: "/images/promosiin.png"
+  images?: string[]; // array gambar untuk galeri
+  year?: string | number;
+  features?: ProjectFeature[];
   featured: boolean;
 }
 
@@ -27,6 +36,11 @@ export const projects: Project[] = [
     github: "https://github.com/fadliilysn/PromosiIn",
     demo: "https://promosiin.vercel.app",
     image: "/images/ss-promosiin.png",
+    images: [
+      "/images/ss-promosiin.png",
+      "/images/ss-promosiin.png",
+      "/images/ss-promosiin.png",
+    ],
     featured: true,
   },
   {
