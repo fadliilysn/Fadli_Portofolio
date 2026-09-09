@@ -72,21 +72,21 @@ const skillCategories: {
 
 const strengths = [
   {
-    title: "Build from scratch",
+    title: "End-to-End Development",
     description:
-      "Terbiasa merancang alur logika, memodelkan struktur data relasional, membangun REST API, dan mengintegrasikannya ke antarmuka web.",
+      "Terbiasa merancang alur sistem dari nol—mulai dari permodelan skema data, pengembangan business logic di backend, hingga integrasi antarmuka yang responsif.",
     Icon: Workflow,
   },
   {
     title: "Backend & API Architecture",
     description:
-      "Berpengalaman menyusun autentikasi aman, validasi input, dokumentasi endpoint yang rapi, dan integrasi frontend React/Next.js.",
+      "Berpengalaman membangun REST API yang aman, modular, dan terdokumentasi terstruktur untuk mempermudah konsumsi data oleh sisi frontend.",
     Icon: Layers3,
   },
   {
-    title: "Data & Machine Learning",
+    title: "Data Science & Machine Learning",
     description:
-      "Menguasai pipeline Computer Vision mulai ekstraksi fitur citra (Color Moments, GLCM), klasifikasi SVM, hingga deployment web siap pakai.",
+      "Menerapkan pipeline Computer Vision mulai dari ekstraksi fitur citra (Color Moments, GLCM), pemodelan klasifikasi SVM, hingga deployment aplikasi berbasis web.",
     Icon: Database,
   },
 ];
@@ -124,8 +124,8 @@ export default function About() {
                 </span>
               </div>
               <p className="mt-1 text-[13.5px] leading-relaxed text-muted">
-                Fokus riset & skripsi: Klasifikasi Kesegaran Rimpang Jahe menggunakan
-                kombinasi 9 Fitur Color Moments (HSV) dan GLCM dengan SVM (Dideploy di Hugging Face & Supabase).
+                Riset Skripsi: Klasifikasi Kesegaran Rimpang Jahe berbasis Computer Vision & SVM
+                (ekstraksi fitur Color Moments HSV + GLCM), dideploy sebagai aplikasi web di Hugging Face & Supabase.
               </p>
             </div>
           </div>

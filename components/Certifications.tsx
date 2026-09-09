@@ -9,7 +9,7 @@ const certifications = [
     issuer: "Certiport",
     date: "2025",
     description:
-      "Sertifikasi Microsoft Excel yang membuktikan kemampuan dalam mengelola data, membuat rumus, dan menganalisis informasi menggunakan Microsoft Excel.",
+      "Membuktikan kompetensi profesional dalam pemodelan data, formulasi kalkulasi logika tingkat lanjut, serta analisis visual menggunakan Microsoft Excel.",
     credentialUrl: "https://www.credly.com/badges/a0438cdc-7b6c-4c65-9f85-ef58d92c47d2/",
     skills: ["Microsoft Excel", "Data Analysis", "Spreadsheet"],
   },
@@ -18,7 +18,7 @@ const certifications = [
     issuer: "Dicoding",
     date: "2026",
     description:
-      "Sertifikasi prompt engineering untuk pengembang perangkat lunak, mencakup perancangan prompt, konteks, struktur, dan optimasi output AI.",
+      "Memvalidasi keahlian perancangan prompt terstruktur, manajemen konteks dinamis, dan teknik optimasi output AI untuk efisiensi pengembangan perangkat lunak.",
     credentialUrl: "https://www.dicoding.com/certificates/0LZ0YK0O0X65",
     skills: ["Prompt Engineering", "AI", "NLP"],
   },
@@ -27,7 +27,7 @@ const certifications = [
     issuer: "Dicoding",
     date: "2024",
     description:
-      "Sertifikasi dasar SQL untuk pengelolaan basis data, mencakup pembuatan, pembacaan, pembaruan, dan penghapusan data menggunakan perintah SQL.",
+      "Menguasai perancangan kueri basis data relasional, manipulasi data (CRUD), penggabungan tabel berelasi (JOIN), dan integritas data menggunakan SQL.",
     credentialUrl: "https://www.dicoding.com/certificates/0LZ06M5YQZ65",
     skills: ["SQL", "Database", "Querying"],
   },
@@ -36,11 +36,10 @@ const certifications = [
     issuer: "Dicoding",
     date: "2024",
     description:
-      "Sertifikasi dasar AI untuk pengenalan konsep kecerdasan buatan, mencakup pemahaman algoritma, model, dan penerapan AI dalam berbagai domain.",
+      "Memahami fundamental konseptual kecerdasan buatan, alur kerja machine learning & deep learning, serta penerapan algoritma cerdas dalam skenario riil.",
     credentialUrl: "https://www.dicoding.com/certificates/ERZR12Q2QZYV",
     skills: ["AI", "Machine Learning", "Deep Learning"],
   },
-  
 ];
 
 const initialVisibleCount = 3;
@@ -54,17 +53,15 @@ export default function Certifications() {
 
   return (
     <section id="certifications" className="mx-auto max-w-content px-6 py-10 sm:py-12">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-sm font-semibold text-accent">Certifications</p>
-          <h2 className="mt-2 text-2xl font-bold tracking-tight">
-            Sertifikasi pendukung skill.
-          </h2>
-          <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-muted">
-            Kredensial yang memperkuat kemampuan teknis di data, pengembangan
-            web, dan penggunaan tools profesional.
-          </p>
-        </div>
+      <div className="max-w-2xl">
+        <p className="text-xs sm:text-sm font-semibold text-accent">Sertifikasi & Kredensial</p>
+        <h2 className="mt-1.5 text-2xl font-bold tracking-tight sm:text-3xl">
+          Sertifikasi & Lisensi Profesional
+        </h2>
+        <p className="mt-2 text-[14.5px] leading-relaxed text-muted">
+          Kredensial terverifikasi yang memperkuat kompetensi teknis dalam pengelolaan basis data,
+          analitika informasi, dan pemanfaatan teknologi AI modern.
+        </p>
       </div>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

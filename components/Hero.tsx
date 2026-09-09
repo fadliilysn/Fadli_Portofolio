@@ -11,7 +11,6 @@ import {
   Code2,
   Server,
   Cpu,
-  Sparkles,
   Check,
   Copy,
 } from "lucide-react";
@@ -26,21 +25,21 @@ const stats = [
 const focusAreas = [
   {
     title: "Backend & REST API",
-    desc: "Membangun arsitektur backend dengan Laravel, PHP, integrasi REST API, dan manajemen database.",
+    desc: "Merancang arsitektur server dengan Laravel & PHP, integrasi REST API yang aman, serta manajemen database relasional.",
     icon: Server,
     color: "text-blue-500",
     bg: "bg-blue-500/10",
   },
   {
     title: "Frontend Web App",
-    desc: "Mengembangkan antarmuka interaktif, responsif, dan cepat dengan React, Next.js, TypeScript, & Tailwind.",
+    desc: "Membangun antarmuka interaktif, responsif, dan berperforma tinggi dengan ekosistem React, Next.js, TypeScript, & Tailwind.",
     icon: Code2,
     color: "text-indigo-500",
     bg: "bg-indigo-500/10",
   },
   {
     title: "Data & Machine Learning",
-    desc: "Eksplorasi ekstraksi fitur citra (Color Moments, GLCM), klasifikasi SVM menggunakan Python & OpenCV.",
+    desc: "Mengembangkan pipeline ekstraksi fitur citra (Color Moments, GLCM) dan klasifikasi SVM menggunakan Python & OpenCV.",
     icon: Cpu,
     color: "text-emerald-500",
     bg: "bg-emerald-500/10",
@@ -122,23 +121,19 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
               </span>
-              Open for Work & Collaboration
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-[12.5px] font-semibold text-accent">
-              <Sparkles size={12} />
-              Junior Software Developer
+              Open for Work
             </span>
           </div>
 
           <h1 className="mt-5 max-w-3xl text-[2.45rem] font-bold leading-[1.08] tracking-tight sm:text-[3.25rem]">
-            Membangun web app, REST API, dan solusi data yang rapi dan mudah digunakan.
+            Membangun Web App Modern, REST API Handal, dan Solusi Berbasis Data.
           </h1>
 
           <p className="mt-6 max-w-2xl text-[16.5px] leading-relaxed text-muted">
             Saya <strong className="font-semibold text-ink">Muhamad Fadli Ilyaasin</strong>,
-            mahasiswa tingkat akhir Teknik Informatika di Universitas Sangga Buana YPKP Bandung.
-            Fokus pada rekayasa backend, aplikasi web modern, dan penerapan machine learning
-            yang solutif untuk permasalahan dunia nyata.
+            pengembang perangkat lunak & mahasiswa tingkat akhir Teknik Informatika di Universitas Sangga Buana YPKP Bandung.
+            Fokus merancang arsitektur backend yang kokoh, antarmuka web yang intuitif, serta solusi machine learning aplikatif
+            yang memecahkan masalah riil.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -183,7 +178,7 @@ export default function Hero() {
 
           <p className="mt-6 flex items-center gap-2 text-[13px] text-muted">
             <MapPin size={14} className="text-accent" />
-            Berbasis di Bandung, Indonesia. Terbuka untuk full-time, internship, dan project kolaboratif.
+            Berbasis di Bandung, Indonesia • Terbuka untuk peluang Full-time, Internship, dan Kolaborasi Proyek.
           </p>
         </motion.div>
 
@@ -211,22 +206,20 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => setActiveTab("focus")}
-                className={`rounded-md px-2.5 py-1 transition-all ${
-                  activeTab === "focus"
+                className={`rounded-md px-2.5 py-1 transition-all ${activeTab === "focus"
                     ? "bg-card font-semibold text-accent shadow-sm"
                     : "text-muted hover:text-ink"
-                }`}
+                  }`}
               >
                 Fokus Utama
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("config")}
-                className={`rounded-md px-2.5 py-1 transition-all ${
-                  activeTab === "config"
+                className={`rounded-md px-2.5 py-1 transition-all ${activeTab === "config"
                     ? "bg-card font-semibold text-accent shadow-sm"
                     : "text-muted hover:text-ink"
-                }`}
+                  }`}
               >
                 fadli.json
               </button>

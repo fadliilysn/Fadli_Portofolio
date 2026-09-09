@@ -21,13 +21,13 @@ export default function Contact() {
     <section id="contact" className="mx-auto max-w-content px-6 py-10 sm:py-12">
       <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold text-accent">Kontak</p>
-          <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
-            Terbuka untuk peluang kerja dan kolaborasi project.
+          <p className="text-xs sm:text-sm font-semibold text-accent">Kontak & Kolaborasi</p>
+          <h2 className="mt-1.5 text-2xl font-bold tracking-tight sm:text-3xl">
+            Mari Terhubung & Diskusikan Peluang
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-muted">
-            Jika ada lowongan pekerjaan, tawaran magang, atau project yang cocok,
-            jangan ragu untuk menghubungi saya melalui salah satu kanal di bawah ini.
+          <p className="mt-2.5 text-[14.5px] leading-relaxed text-muted">
+            Saya selalu terbuka untuk mendiskusikan peluang kerja penuh waktu, magang industri,
+            maupun kolaborasi proyek teknologi baru. Silakan hubungi saya melalui kanal di bawah ini.
           </p>
         </div>
 
