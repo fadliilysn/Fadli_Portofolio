@@ -2,22 +2,11 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowRight,
-  Download,
-  Mail,
-  MapPin,
-  Terminal,
-  Code2,
-  Server,
-  Cpu,
-  Check,
-  Copy,
-} from "lucide-react";
+import { ArrowRight, Download, Mail, MapPin, Terminal, Code2, Server, Cpu, Check, Copy } from "lucide-react";
 
 const stats = [
-  { value: "7+", label: "Project portfolio" },
-  { value: "3", label: "Sertifikasi relevan" },
+  { value: "5+", label: "Project portfolio" },
+  { value: "4+", label: "Sertifikasi relevan" },
   { value: "1", label: "Pengalaman internship" },
   { value: "3.88", label: "IPK terakhir" },
 ];
@@ -62,7 +51,7 @@ export default function Hero() {
 
   const handleDownloadCv = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     try {
-      const res = await fetch("/cv-fadli.pdf", { method: "HEAD" });
+      const res = await fetch("public/files/CV-Muhamad-Fadli-Ilyaasin.pdf", { method: "HEAD" });
       if (!res.ok) {
         e.preventDefault();
         setCvAlert("File CV sedang dalam pembaruan. Silakan hubungi via email untuk resume terbaru.");
@@ -84,22 +73,15 @@ export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden border-b border-border">
       {/* Ambient background glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 right-1/4 h-[500px] w-[500px] rounded-full bg-accent/15 blur-[120px] dark:bg-accent/20"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-20 left-10 h-72 w-72 rounded-full bg-indigo-500/10 blur-[100px] dark:bg-indigo-500/15"
-      />
+      <div aria-hidden className="pointer-events-none absolute -top-40 right-1/4 h-[500px] w-[500px] rounded-full bg-accent/15 blur-[120px] dark:bg-accent/20" />
+      <div aria-hidden className="pointer-events-none absolute -bottom-20 left-10 h-72 w-72 rounded-full bg-indigo-500/10 blur-[100px] dark:bg-indigo-500/15" />
 
       {/* Subtle grid pattern */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage:
-            "radial-gradient(rgb(var(--accent) / 0.15) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgb(var(--accent) / 0.15) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
           backgroundPosition: "-12px -12px",
           maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
@@ -109,11 +91,7 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-content gap-12 px-6 pb-16 pt-14 sm:pb-20 sm:pt-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pt-20">
         {/* Left Column: Bio & CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        >
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }}>
           {/* Status Badges */}
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[12.5px] font-medium text-emerald-600 dark:text-emerald-400">
@@ -125,15 +103,11 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="mt-5 max-w-3xl text-[2.45rem] font-bold leading-[1.08] tracking-tight sm:text-[3.25rem]">
-            Membangun Web App Modern, REST API Handal, dan Solusi Berbasis Data.
-          </h1>
+          <h1 className="mt-5 max-w-3xl text-[2.45rem] font-bold leading-[1.08] tracking-tight sm:text-[3.25rem]">Membangun Web App Modern, REST API Handal, dan Solusi Berbasis Data.</h1>
 
           <p className="mt-6 max-w-2xl text-[16.5px] leading-relaxed text-muted">
-            Saya <strong className="font-semibold text-ink">Muhamad Fadli Ilyaasin</strong>,
-            pengembang perangkat lunak & mahasiswa tingkat akhir Teknik Informatika di Universitas Sangga Buana YPKP Bandung.
-            Fokus merancang arsitektur backend yang kokoh, antarmuka web yang intuitif, serta solusi machine learning aplikatif
-            yang memecahkan masalah riil.
+            Saya <strong className="font-semibold text-ink">Muhamad Fadli Ilyaasin</strong>, pengembang perangkat lunak & mahasiswa tingkat akhir Teknik Informatika di Universitas Sangga Buana YPKP Bandung. Fokus merancang arsitektur
+            backend yang kokoh, antarmuka web yang intuitif, serta solusi machine learning aplikatif yang memecahkan masalah riil.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -144,19 +118,11 @@ export default function Hero() {
               Lihat project
               <ArrowRight size={15} />
             </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold transition-colors hover:bg-surface"
-            >
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold transition-colors hover:bg-surface">
               <Mail size={15} />
               Hubungi saya
             </a>
-            <a
-              href="/cv-fadli.pdf"
-              download
-              onClick={handleDownloadCv}
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-surface"
-            >
+            <a href="/cv-fadli.pdf" download onClick={handleDownloadCv} className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-surface">
               <Download size={15} />
               Unduh CV
             </a>
@@ -203,24 +169,10 @@ export default function Hero() {
 
             {/* Tab switchers */}
             <div className="flex items-center rounded-lg border border-border bg-bg/80 p-0.5 text-xs font-medium">
-              <button
-                type="button"
-                onClick={() => setActiveTab("focus")}
-                className={`rounded-md px-2.5 py-1 transition-all ${activeTab === "focus"
-                    ? "bg-card font-semibold text-accent shadow-sm"
-                    : "text-muted hover:text-ink"
-                  }`}
-              >
+              <button type="button" onClick={() => setActiveTab("focus")} className={`rounded-md px-2.5 py-1 transition-all ${activeTab === "focus" ? "bg-card font-semibold text-accent shadow-sm" : "text-muted hover:text-ink"}`}>
                 Fokus Utama
               </button>
-              <button
-                type="button"
-                onClick={() => setActiveTab("config")}
-                className={`rounded-md px-2.5 py-1 transition-all ${activeTab === "config"
-                    ? "bg-card font-semibold text-accent shadow-sm"
-                    : "text-muted hover:text-ink"
-                  }`}
-              >
+              <button type="button" onClick={() => setActiveTab("config")} className={`rounded-md px-2.5 py-1 transition-all ${activeTab === "config" ? "bg-card font-semibold text-accent shadow-sm" : "text-muted hover:text-ink"}`}>
                 fadli.json
               </button>
             </div>
@@ -230,31 +182,18 @@ export default function Hero() {
           <div className="p-5 sm:p-6">
             {activeTab === "focus" ? (
               <div className="space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-muted">
-                  Pilar Keahlian Utama
-                </p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted">Pilar Keahlian Utama</p>
                 {focusAreas.map((item, index) => (
-                  <div
-                    key={item.title}
-                    className="group flex items-start gap-3.5 rounded-xl border border-border/60 bg-surface/50 p-3.5 transition-all hover:border-accent/40 hover:bg-surface"
-                  >
-                    <div
-                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${item.bg} ${item.color} transition-transform group-hover:scale-105`}
-                    >
+                  <div key={item.title} className="group flex items-start gap-3.5 rounded-xl border border-border/60 bg-surface/50 p-3.5 transition-all hover:border-accent/40 hover:bg-surface">
+                    <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${item.bg} ${item.color} transition-transform group-hover:scale-105`}>
                       <item.icon size={18} />
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-[11px] font-semibold text-accent">
-                          0{index + 1}
-                        </span>
-                        <h2 className="text-[14px] font-semibold text-ink">
-                          {item.title}
-                        </h2>
+                        <span className="font-mono text-[11px] font-semibold text-accent">0{index + 1}</span>
+                        <h2 className="text-[14px] font-semibold text-ink">{item.title}</h2>
                       </div>
-                      <p className="mt-1 text-[12.5px] leading-relaxed text-muted">
-                        {item.desc}
-                      </p>
+                      <p className="mt-1 text-[12.5px] leading-relaxed text-muted">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -263,11 +202,7 @@ export default function Hero() {
               <div className="relative">
                 <div className="flex items-center justify-between pb-2">
                   <span className="font-mono text-xs text-muted">// developer_spec.json</span>
-                  <button
-                    type="button"
-                    onClick={handleCopySnippet}
-                    className="flex items-center gap-1 text-[11px] font-medium text-muted hover:text-ink"
-                  >
+                  <button type="button" onClick={handleCopySnippet} className="flex items-center gap-1 text-[11px] font-medium text-muted hover:text-ink">
                     {copiedSnippet ? (
                       <>
                         <Check size={12} className="text-emerald-500" />
@@ -298,12 +233,8 @@ export default function Hero() {
         >
           {stats.map((stat) => (
             <div key={stat.label} className="bg-bg px-5 py-5 transition-colors hover:bg-surface/50">
-              <dt className="font-mono text-[28px] font-semibold tracking-tight text-accent sm:text-[32px]">
-                {stat.value}
-              </dt>
-              <dd className="mt-1 text-[12.5px] leading-snug text-muted">
-                {stat.label}
-              </dd>
+              <dt className="font-mono text-[28px] font-semibold tracking-tight text-accent sm:text-[32px]">{stat.value}</dt>
+              <dd className="mt-1 text-[12.5px] leading-snug text-muted">{stat.label}</dd>
             </div>
           ))}
         </motion.dl>

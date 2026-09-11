@@ -31,7 +31,7 @@ export const certifications: Certification[] = [
       "Memvalidasi keahlian perancangan prompt terstruktur, manajemen konteks dinamis, dan teknik optimasi output AI untuk efisiensi pengembangan perangkat lunak.",
     credentialUrl: "https://www.dicoding.com/certificates/0LZ0YK0O0X65",
     skills: ["Prompt Engineering", "AI", "NLP"],
-    // image: "/images/certs/prompt-engineering.png",
+    image: "/images/certs/prompt-dicoding.png",
   },
   {
     slug: "sql-dasar-dicoding",
@@ -42,7 +42,7 @@ export const certifications: Certification[] = [
       "Menguasai perancangan kueri basis data relasional, manipulasi data (CRUD), penggabungan tabel berelasi (JOIN), dan integritas data menggunakan SQL.",
     credentialUrl: "https://www.dicoding.com/certificates/0LZ06M5YQZ65",
     skills: ["SQL", "Database", "Querying"],
-    // image: "/images/certs/sql-dasar.png",
+    image: "/images/certs/sql-dicoding.png",
   },
   {
     slug: "dasar-ai-dicoding",
@@ -53,7 +53,29 @@ export const certifications: Certification[] = [
       "Memahami fundamental konseptual kecerdasan buatan, alur kerja machine learning & deep learning, serta penerapan algoritma cerdas dalam skenario riil.",
     credentialUrl: "https://www.dicoding.com/certificates/ERZR12Q2QZYV",
     skills: ["AI", "Machine Learning", "Deep Learning"],
-    // image: "/images/certs/dasar-ai.png",
+    image: "/images/certs/ai-dicoding.png",
+  },
+  {
+    slug: "memulai-pemrograman-dengan-python",
+    title: "Memulai Pemrograman dengan Python",
+    issuer: "Dicoding",
+    date: "2026",
+    description:
+      "Mempelajari dasar-dasar bahasa pemrograman Python, termasuk sintaks, struktur kontrol, fungsi, dan modul.",
+    credentialUrl: "https://www.dicoding.com/certificates/JMZVO6KLQXN9",
+    skills: ["Python", "Programming"],
+    image: "/images/certs/python-dicoding.png",
+  },
+  {
+    slug: "belajar-dasar-data-science",
+    title: "Belajar Dasar Data Science",
+    issuer: "Dicoding",
+    date: "2024",
+    description:
+      "Mempelajari dasar-dasar data science, termasuk fundamental data science seperti, pembersihan data, visualisasi data, dan analisis data, hingga teknologi dan tools pendukung.",
+    credentialUrl: "https://www.dicoding.com/certificates/JMZV4RD2NXN9",
+    skills: ["Data Science", "Python", "Data Analysis", "Tools"],
+    image: "/images/certs/ds-dicoding.png",
   },
 ];
 

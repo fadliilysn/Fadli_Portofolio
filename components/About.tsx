@@ -27,48 +27,48 @@ const skillCategories: {
   desc: string;
   items: TechItem[];
 }[] = [
-  {
-    label: "Frontend Web",
-    desc: "Membangun antarmuka modern, interaktif, & responsif.",
-    items: [
-      { name: "React", icon: Code2 },
-      { name: "Next.js", icon: Zap },
-      { name: "TypeScript", icon: FileCode },
-      { name: "Tailwind CSS", icon: Layers3 },
-    ],
-  },
-  {
-    label: "Backend & API",
-    desc: "Perancangan arsitektur server, endpoint RESTful, & logic data.",
-    items: [
-      { name: "Laravel", icon: Server },
-      { name: "Flask", icon: Network },
-      { name: "PHP", icon: FileCode },
-      { name: "REST API", icon: Binary },
-    ],
-  },
-  {
-    label: "Data & ML",
-    desc: "Pemrosesan citra digital & pemodelan machine learning.",
-    items: [
-      { name: "Python", icon: Code2 },
-      { name: "SVM", icon: Cpu },
-      { name: "OpenCV", icon: Eye },
-      { name: "GLCM & Feature Ext.", icon: Binary },
-    ],
-  },
-  {
-    label: "Database & Tools",
-    desc: "Manajemen basis data relasional, cloud infra, & version control.",
-    items: [
-      { name: "PostgreSQL", icon: Database },
-      { name: "MySQL", icon: Database },
-      { name: "Supabase", icon: Zap },
-      { name: "Git", icon: GitBranch },
-      { name: "Docker", icon: Boxes },
-    ],
-  },
-];
+    {
+      label: "Frontend Web",
+      desc: "Membangun antarmuka modern, interaktif, & responsif.",
+      items: [
+        { name: "React", icon: Code2 },
+        { name: "Next.js", icon: Zap },
+        { name: "TypeScript", icon: FileCode },
+        { name: "Tailwind CSS", icon: Layers3 },
+      ],
+    },
+    {
+      label: "Backend & API",
+      desc: "Perancangan arsitektur server, endpoint RESTful, & logic data.",
+      items: [
+        { name: "Laravel", icon: Server },
+        { name: "Flask", icon: Network },
+        { name: "PHP", icon: FileCode },
+        { name: "REST API", icon: Binary },
+      ],
+    },
+    {
+      label: "Data & ML",
+      desc: "Pemrosesan citra digital & pemodelan machine learning.",
+      items: [
+        { name: "Python", icon: Code2 },
+        { name: "SVM", icon: Cpu },
+        { name: "OpenCV", icon: Eye },
+        { name: "GLCM & Feature Ext.", icon: Binary },
+      ],
+    },
+    {
+      label: "Database & Tools",
+      desc: "Manajemen basis data relasional, cloud infra, & version control.",
+      items: [
+        { name: "PostgreSQL", icon: Database },
+        { name: "MySQL", icon: Database },
+        { name: "Supabase", icon: Zap },
+        { name: "Git", icon: GitBranch },
+        { name: "Docker", icon: Boxes },
+      ],
+    },
+  ];
 
 const strengths = [
   {
@@ -86,7 +86,7 @@ const strengths = [
   {
     title: "Data Science & Machine Learning",
     description:
-      "Menerapkan pipeline Computer Vision mulai dari ekstraksi fitur citra (Color Moments, GLCM), pemodelan klasifikasi SVM, hingga deployment aplikasi berbasis web.",
+      "Menerapkan pipeline Computer Vision mulai dari preprocessing citra, ekstraksi fitur citra (Color Moments, GLCM), pemodelan klasifikasi SVM, hingga deployment aplikasi berbasis web.",
     Icon: Database,
   },
 ];

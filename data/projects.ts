@@ -16,7 +16,7 @@ export interface Project {
   tech: string[];
   github: string;
   demo?: string;
-  image?: string;   // taruh file di /public/images, contoh: "/images/promosiin.png"
+  image?: string; // taruh file di /public/images, contoh: "/images/promosiin.png"
   images?: string[]; // array gambar untuk galeri
   year?: string | number;
   features?: ProjectFeature[];
@@ -35,26 +35,24 @@ export const projects: Project[] = [
     tech: ["Next.js 14", "JavaScript", "Tailwind CSS", "Google Gemini API"],
     github: "https://github.com/fadliilysn/PromosiIn",
     demo: "https://promosiin.vercel.app",
-    image: "/images/ss-promosiin.png",
-    images: [
-      "/images/ss-promosiin.png",
-      "/images/ss-promosiin.png",
-      "/images/ss-promosiin.png",
-    ],
-    featured: true,
+    image: "/images/prjct/ss-promosiin.png",
+    images: ["/images/prjct/ss-promosiin.png", "/images/prjct/hasil-promosiin.png"],
+    featured: false,
   },
   {
     slug: "gingers-freshness-classification",
-    title: "Klasifikasi Kesegaran Jahe",
+    title: "GingerClassify",
     category: "data-ml",
     summary: "Sistem klasifikasi kesegaran rimpang jahe berbasis Color Moments (HSV) + GLCM dan SVM.",
     description:
       "Sistem berbasis web untuk mengklasifikasikan kesegaran rimpang jahe menggunakan kombinasi 9 fitur Color Moments (HSV) dan 4 fitur tekstur GLCM, diklasifikasikan dengan SVM kernel RBF. Model dilatih pada 576 citra dan mencapai akurasi 84% pada pengujian internal serta 82% pada citra baru di luar dataset. Ini adalah topik skripsi saya, dideploy sebagai aplikasi web di Hugging Face Spaces lengkap dengan riwayat prediksi tersimpan di Supabase.",
     role: "Skripsi / Tugas Akhir",
-    tech: ["Python", "Flask", "SVM", "OpenCV", "Supabase"],
+    tech: ["Python", "Flask", "SVM", "OpenCV", "Supabase", "Hugging Face Spaces"],
     github: "https://github.com/fadliilysn/gingers-freshness-classification",
     demo: "https://fadliilysn-gingerclassify.hf.space/",
-    featured: true,
+    image: "/images/prjct/home-gingerclassify.png",
+    images: ["/images/prjct/home-gingerclassify.png", "/images/prjct/hasil-gingerclassify.png", "/images/prjct/riwayat-gingerclassify.png"],
+    featured: false,
   },
   {
     slug: "nuanscent",
@@ -66,18 +64,8 @@ export const projects: Project[] = [
     role: "Personal project",
     tech: ["React", "TypeScript", "Vite", "Laravel 12", "PostgreSQL", "Filament"],
     github: "https://github.com/fadliilysn/Nuanscent",
-    featured: true,
-  },
-  {
-    slug: "sistem-administrasi-pkm-dosen",
-    title: "Administrasi Data Penelitian & PKM Dosen",
-    category: "web",
-    summary: "Sistem administrasi berbasis web untuk mengelola data penelitian dan PKM dosen.",
-    description:
-      "Sistem administrasi berbasis web untuk mengelola data penelitian dan Pengabdian kepada Masyarakat (PKM) dosen. Mencakup perancangan basis data relasional di MySQL, logic backend dengan PHP untuk proses input, pengolahan, dan penyimpanan data, serta antarmuka responsif dengan Bootstrap.",
-    role: "Academic project",
-    tech: ["PHP", "MySQL", "Bootstrap"],
-    github: "https://github.com/fadliilysn",
+    image: "/images/prjct/home-nuanscent.png",
+    images: ["/images/prjct/home-nuanscent.png", "/images/prjct/quiz-nuanscent.png", "/images/prjct/katalog-nuanscent.png", "/images/prjct/brand-nuanscent.png", "/images/prjct/guide-nuanscent.png", "/images/prjct/admin-nuanscent.png"],
     featured: false,
   },
   {
@@ -97,8 +85,7 @@ export const projects: Project[] = [
     title: "FlowSent Backend",
     category: "web",
     summary: "Backend API untuk aplikasi email client.",
-    description:
-      "Backend API untuk FlowSent, sebuah aplikasi email client. Dibangun dengan Laravel, menangani autentikasi, pengelolaan folder, dan operasi CRUD untuk pesan email yang dikonsumsi oleh aplikasi frontend.",
+    description: "Backend API untuk FlowSent, sebuah aplikasi email client. Dibangun dengan Laravel, menangani autentikasi, pengelolaan folder, dan operasi CRUD untuk pesan email yang dikonsumsi oleh aplikasi frontend.",
     role: "Personal project",
     tech: ["Laravel", "PHP", "MySQL"],
     github: "https://github.com/fadliilysn/flowsent-back",
@@ -109,8 +96,7 @@ export const projects: Project[] = [
     title: "Jadwal Sholat",
     category: "web",
     summary: "Aplikasi web ringan untuk menampilkan jadwal sholat dari berbagai kota.",
-    description:
-      "Aplikasi web untuk menampilkan jadwal sholat berdasarkan kota yang dipilih pengguna. Dibangun dengan React dan Vite untuk performa loading yang cepat serta pengalaman penggunaan yang ringan.",
+    description: "Aplikasi web untuk menampilkan jadwal sholat berdasarkan kota yang dipilih pengguna. Dibangun dengan React dan Vite untuk performa loading yang cepat serta pengalaman penggunaan yang ringan.",
     role: "Personal project",
     tech: ["React", "Vite", "JavaScript"],
     github: "https://github.com/fadliilysn/jadwal-sholat",

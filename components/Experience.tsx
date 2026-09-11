@@ -14,7 +14,7 @@ const experiences = [
       "Menyusun dokumentasi API komprehensif menggunakan Postman guna mempercepat alur integrasi tim frontend.",
       "Berkolaborasi aktif dengan pengembang frontend React dalam penyesuaian format payload dan penanganan error secara konsisten.",
     ],
-    stack: ["Laravel", "PHP", "REST API", "React Integration", "Postman"],
+    stack: ["Laravel", "PHP", "REST API", "React Integration", "Postman", "Docker"],
   },
   {
     role: "Web & Database Developer",
@@ -25,7 +25,7 @@ const experiences = [
     summary:
       "Merancang basis data relasional dan mengembangkan sistem web administrasi untuk digitalisasi tata kelola data penelitian & pengabdian dosen.",
     highlights: [
-      "Merancang skema database MySQL yang ternormalisasi untuk efisiensi penyimpanan dan integritas data tri dharma perguruan tinggi.",
+      "Merancang skema database MySQL untuk efisiensi penyimpanan dan rekap data penelitian & pendabdian di universitas sangga Buana.",
       "Mengembangkan modul backend berbasis PHP untuk otomatisasi alur input, validasi berjenjang, dan rekapitulasi data akademik.",
       "Mengimplementasikan antarmuka web responsif berbasis Bootstrap yang ergonomis dan intuitif bagi staf dan dosen.",
     ],
