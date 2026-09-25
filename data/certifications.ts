@@ -45,6 +45,17 @@ export const certifications: Certification[] = [
     image: "/images/certs/sql-dicoding.png",
   },
   {
+    slug: "ml-untuk-pemula-dicoding",
+    title: "Belajar Machine Learning untuk Pemula",
+    issuer: "Dicoding",
+    date: "2026",
+    description:
+      "Mempersiapkan diri untuk menjadi seorang Machine Learning Engineer dengan mempelajari mulai dari dasar-dasar algoritma Machine Learning, cara kerja model, hingga proses evaluasi model.",
+    credentialUrl: "https://www.dicoding.com/certificates/0LZ06M5YQZ65",
+    skills: ["Machine Learning", "AI", "Data Science", "Data", "Machine Learning Model"],
+    image: "/images/certs/ml-dicoding.png",
+  },
+  {
     slug: "dasar-ai-dicoding",
     title: "Belajar Dasar AI",
     issuer: "Dicoding",
