@@ -35,8 +35,8 @@ export const projects: Project[] = [
     tech: ["Next.js 14", "JavaScript", "Tailwind CSS", "Google Gemini API"],
     github: "https://github.com/fadliilysn/PromosiIn",
     demo: "https://promosiin.vercel.app",
-    image: "/images/prjct/ss-promosiin.png",
-    images: ["/images/prjct/ss-promosiin.png", "/images/prjct/hasil-promosiin.png"],
+    image: "/images/prjct/PromosiIn/ss-promosiin.png",
+    images: ["/images/prjct/PromosiIn/ss-promosiin.png", "/images/prjct/PromosiIn/hasil-promosiin.png"],
     featured: false,
   },
   {
@@ -50,8 +50,8 @@ export const projects: Project[] = [
     tech: ["Python", "Flask", "SVM", "OpenCV", "Supabase", "Hugging Face Spaces"],
     github: "https://github.com/fadliilysn/gingers-freshness-classification",
     demo: "https://fadliilysn-gingerclassify.hf.space/",
-    image: "/images/prjct/home-gingerclassify.png",
-    images: ["/images/prjct/home-gingerclassify.png", "/images/prjct/hasil-gingerclassify.png", "/images/prjct/riwayat-gingerclassify.png"],
+    image: "/images/prjct/GingerClassify/home-gingerclassify.png",
+    images: ["/images/prjct/GingerClassify/home-gingerclassify.png", "/images/prjct/GingerClassify/hasil-gingerclassify.png", "/images/prjct/GingerClassify/riwayat-gingerclassify.png"],
     featured: false,
   },
   {
@@ -64,8 +64,8 @@ export const projects: Project[] = [
     role: "Personal project",
     tech: ["React", "TypeScript", "Vite", "Laravel 12", "PostgreSQL", "Filament"],
     github: "https://github.com/fadliilysn/Nuanscent",
-    image: "/images/prjct/home-nuanscent.png",
-    images: ["/images/prjct/home-nuanscent.png", "/images/prjct/quiz-nuanscent.png", "/images/prjct/katalog-nuanscent.png", "/images/prjct/brand-nuanscent.png", "/images/prjct/guide-nuanscent.png", "/images/prjct/admin-nuanscent.png"],
+    image: "/images/prjct/Nuanscent/home-nuanscent.png",
+    images: ["/images/prjct/Nuanscent/home-nuanscent.png", "/images/prjct/Nuanscent/quiz-nuanscent.png", "/images/prjct/Nuanscent/katalog-nuanscent.png", "/images/prjct/Nuanscent/brand-nuanscent.png", "/images/prjct/Nuanscent/guide-nuanscent.png", "/images/prjct/Nuanscent/admin-nuanscent.png"],
     featured: false,
   },
   {
@@ -78,6 +78,8 @@ export const projects: Project[] = [
     role: "Personal project",
     tech: ["Laravel", "Blade", "MySQL"],
     github: "https://github.com/fadliilysn/antrian_digital",
+    image: "/images/prjct/antrian_digital/homepage.png",
+    images: ["/images/prjct/antrian_digital/homepage.png", "/images/prjct/antrian_digital/customer-view.png", "/images/prjct/antrian_digital/display-monitor.png", "/images/prjct/antrian_digital/admin-dashboard.png", "/images/prjct/antrian_digital/queue-management.png"],
     featured: false,
   },
   {
@@ -89,6 +91,8 @@ export const projects: Project[] = [
     role: "Personal project",
     tech: ["Laravel", "PHP", "MySQL"],
     github: "https://github.com/fadliilysn/flowsent-back",
+    image: "/images/prjct/flowsent/login.png",
+    images: ["/images/prjct/flowsent/login.png", "/images/prjct/flowsent/main-layout.png"],
     featured: false,
   },
   {
@@ -100,6 +104,8 @@ export const projects: Project[] = [
     role: "Personal project",
     tech: ["React", "Vite", "JavaScript"],
     github: "https://github.com/fadliilysn/jadwal-sholat",
+    image: "/images/prjct/jadwal-sholat/home-light.png",
+    images: ["/images/prjct/jadwal-sholat/home-dark.png"],
     featured: false,
   },
 ];
