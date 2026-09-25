@@ -122,7 +122,7 @@ export default function Hero() {
               <Mail size={15} />
               Hubungi saya
             </a>
-            <a href="/CV-Muhamad-Fadli-Ilyaasin.pdf" download onClick={handleDownloadCv} className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-surface">
+            <a href="/CV-Muhamad Fadli Ilyaasin.pdf" download onClick={handleDownloadCv} className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-surface">
               <Download size={15} />
               Unduh CV
             </a>
