@@ -51,7 +51,7 @@ export default function Hero() {
 
   const handleDownloadCv = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     try {
-      const res = await fetch("public/files/CV-Muhamad-Fadli-Ilyaasin.pdf", { method: "HEAD" });
+      const res = await fetch("/CV-Muhamad-Fadli-Ilyaasin.pdf", { method: "HEAD" });
       if (!res.ok) {
         e.preventDefault();
         setCvAlert("File CV sedang dalam pembaruan. Silakan hubungi via email untuk resume terbaru.");
@@ -122,7 +122,7 @@ export default function Hero() {
               <Mail size={15} />
               Hubungi saya
             </a>
-            <a href="/cv-fadli.pdf" download onClick={handleDownloadCv} className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-surface">
+            <a href="/CV-Muhamad-Fadli-Ilyaasin.pdf" download onClick={handleDownloadCv} className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-surface">
               <Download size={15} />
               Unduh CV
             </a>
